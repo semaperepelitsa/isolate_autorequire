@@ -30,6 +30,8 @@ Hoe.spec 'isolate_autorequire' do
   developer 'Semyon Perepelitsa', 'sema@sema.in'
 
   # self.rubyforge_name = 'isolate_autorequirex' # if different than 'isolate_autorequire'
+
+  dependency 'isolate', '~> 3.2'
 end
 
 # vim: syntax=ruby
