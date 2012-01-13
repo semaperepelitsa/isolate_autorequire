@@ -27,7 +27,7 @@ Hoe.spec 'isolate-autorequire' do
   # you'll never have to touch them again!
   # (delete this comment too, of course)
 
-  # developer('FIX', 'FIX@example.com')
+  developer 'Semyon Perepelitsa', 'sema@sema.in'
 
   # self.rubyforge_name = 'isolate-autorequirex' # if different than 'isolate-autorequire'
 end
