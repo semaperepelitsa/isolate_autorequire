@@ -1,4 +1,4 @@
-= isolate-autorequire
+= isolate_autorequire
 
 * FIX (url)
 

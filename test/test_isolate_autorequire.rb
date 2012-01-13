@@ -1,5 +1,5 @@
 require "test/unit"
-require "isolate-autorequire"
+require "isolate_autorequire"
 
 class TestIsolateAutorequire < Test::Unit::TestCase
   Entry = Struct.new(:name, :options)

@@ -22,14 +22,14 @@ require 'hoe'
 # Hoe.plugin :rubyforge
 # Hoe.plugin :seattlerb
 
-Hoe.spec 'isolate-autorequire' do
+Hoe.spec 'isolate_autorequire' do
   # HEY! If you fill these out in ~/.hoe_template/Rakefile.erb then
   # you'll never have to touch them again!
   # (delete this comment too, of course)
 
   developer 'Semyon Perepelitsa', 'sema@sema.in'
 
-  # self.rubyforge_name = 'isolate-autorequirex' # if different than 'isolate-autorequire'
+  # self.rubyforge_name = 'isolate_autorequirex' # if different than 'isolate_autorequire'
 end
 
 # vim: syntax=ruby
