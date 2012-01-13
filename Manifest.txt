@@ -3,5 +3,5 @@ Manifest.txt
 README.txt
 Rakefile
 lib/isolate_autorequire.rb
-lib/isolate_autorequire/now.rb
+lib/isolate/require.rb
 test/test_isolate_autorequire.rb
