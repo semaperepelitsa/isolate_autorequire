@@ -1,0 +1,8 @@
+.autotest
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/isolate/autorequire
+lib/isolate/autorequire.rb
+test/test_isolate/autorequire.rb
