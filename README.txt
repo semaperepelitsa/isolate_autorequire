@@ -1,6 +1,6 @@
 = isolate_autorequire
 
-* FIX (url)
+* https://github.com/semaperepelitsa/isolate_autorequire
 
 == DESCRIPTION:
 
