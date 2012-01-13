@@ -7,8 +7,11 @@ class IsolateAutorequire
     @entries = entries
   end
 
-  def now!
+  def now! environment = nil
+    env = (environment || Isolate.env).to_s
+
     @entries.each do |e|
+      next unless e.matches? env
       next unless path = e.options.fetch(:require, e.name)
 
       begin
