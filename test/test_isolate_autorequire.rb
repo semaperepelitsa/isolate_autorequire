@@ -1,14 +1,20 @@
 require "test/unit"
 require "isolate_autorequire"
 
+module Isolate
+  def self.env
+    "development"
+  end
+end
+
 class TestIsolateAutorequire < Test::Unit::TestCase
   Entry = Struct.new(:name, :options, :environments) do
     def matches?(env)
-      environments.map(&:to_s).include?(env)
+      environments.empty? or environments.map(&:to_s).include?(env)
     end
   end
 
-  def test_sanity
+  def test_requiring_appropriate_env
     entries = [
       Entry.new("non_existent_library", {}, [:development]),
       Entry.new("very_productive_gem", {}, [:production])
@@ -18,6 +24,28 @@ class TestIsolateAutorequire < Test::Unit::TestCase
     end
     assert_equal "", out
     assert_equal 'cannot require "non_existent_library"', err.chomp
+  end
+
+  def test_custom_require_path
+    entries = [
+      Entry.new("non_existent_library", { :require => "non_existent_library/path" }, []),
+    ]
+    out, err = capture_io do
+      IsolateAutorequire.new(entries).now!
+    end
+    assert_equal "", out
+    assert_equal 'cannot require "non_existent_library/path"', err.chomp
+  end
+
+  def test_custom_no_require
+    entries = [
+      Entry.new("non_existent_library", { :require => false }, []),
+    ]
+    out, err = capture_io do
+      IsolateAutorequire.new(entries).now!
+    end
+    assert_equal "", out
+    assert_equal '', err.chomp
   end
 
 private
